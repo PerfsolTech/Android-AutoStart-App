@@ -2,11 +2,11 @@
 [Solved] How to Auto Launch Android App At Boot?
 
 
-# Android Auto Launch App works according to the boot completed broadcast in Android.
-# Whenever the device boots up, it sends out this broadcast, and the apps can register a broadcast receiver to listen to it.
-# Once that is done, the app can be launched programmatically, and after the device restarts, it starts automatically.
-## The auto-start feature is supported by multiple Android OS versions but is generally available on Android 10 and all the newer versions.
-## Some of the manufacturers may have implemented it in the earlier versions as well, but the steps may vary from device to device.
+ Android Auto Launch App works according to the boot completed broadcast in Android.
+ Whenever the device boots up, it sends out this broadcast, and the apps can register a broadcast receiver to listen to it.
+ Once that is done, the app can be launched programmatically, and after the device restarts, it starts automatically.
+ The auto-start feature is supported by multiple Android OS versions but is generally available on Android 10 and all the newer versions.
+ Some of the manufacturers may have implemented it in the earlier versions as well, but the steps may vary from device to device.
 
 1. Create BroadcastReceiver  
    class BootReceiver : BroadcastReceiver() {
@@ -35,15 +35,15 @@
             </intent-filter>
         </receiver>
 
-# These permissions are related to device booting and rebooting, allowing the application to receive events related to
-# booting and to request a reboot under certain circumstances.
+ These permissions are related to device booting and rebooting, allowing the application to receive events related to
+ booting and to request a reboot under certain circumstances.
 
 3. Add permissions to manifest
 
    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 4. Make Intent for allow user to select permissions
-## This code opens the system settings screen where the user can manage overlay permissions for the current application
+ This code opens the system settings screen where the user can manage overlay permissions for the current application
 
 val intent =
 Intent(
